@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kő-Papír-Olló Játék</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="switchTab('home')">
+    <header>
+        <h1>Kő-Papír-Olló Játék</h1>
+    </header>
+    
+    <nav>
+        <button onclick="switchTab('home')">Home</button>
+        <button onclick="switchTab('game')">Játék</button>
+        <button onclick="switchTab('source')">Source</button>
+    </nav>
+
+    <div id="home" class="tab">
+        <h2>Üdvözöllek a Kő-Papír-Olló Játék oldalán!</h2>
+        <p>A kő-papír-olló egy egyszerű kézjáték, ahol két játékos párhuzamosan egy-egy jelzést mutat be:</p>
+        <ul>
+            <li>Kő</li>
+            <li>Papír</li>
+            <li>Olló</li>
+        </ul>
+        <p>A játék története és eredete különböző kultúrákra vezethető vissza, de pontos eredete nem ismert.</p>
+        <footer>&copy; Gábor Dénes Középiskola</footer>
+    </div>
+
+    <div id="game" class="tab">
+        <h2>Játék</h2>
+        <input type="text" id="playerName" placeholder="Játékos neve">
+        <button onclick="startGame()">Játék indítása</button>
+        <div id="choices" style="display: none;">
+            <button onclick="choose('kő')">Kő</button>
+            <button onclick="choose('papír')">Papír</button>
+            <button onclick="choose('olló')">Olló</button>
+        </div>
+        <div id="gameResult"></div>
+        <div id="winStreak">Win Streak: 0</div>
+        <div id="disclaimer">
+            <input type="checkbox" id="accept"> Elfogadom a játékszabályokat és az adatvédelmi nyilatkozatot.
+        </div>
+    </div>
+
+    <div id="source" class="tab">
+        <h2>Forrás</h2>
+        <button onclick="redirectToSource()">Source</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
